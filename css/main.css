@@ -1,0 +1,167 @@
+/* ************ */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+
+:root {
+    --primary: #22d47e;       /* Bright neon green */
+    --primary-dark: #136d41;   /* Slightly darker green */
+    --black: #0a0a0a;          /* Near black background */
+    --gray: #1e1e1e;           /* Soft dark for sections */
+    --white: #f5f5f5;          /* Slightly off-white for text */
+  
+    /* Accent / Utility Colors */
+    --accent: #33ffa8;         /* Light green for hover/active */
+    --danger: #ff4d4d;         /* Red for errors/warnings */
+    --border: #333333;         /* Border gray */
+    --shadow: 0 0 10px rgba(0, 255, 132, 0.3); /* Greenish glow */
+  
+
+    --font-main: 'Poppins', sans-serif;
+  }
+
+body{
+    background: rgb(214, 213, 213)
+}
+.angled-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 50vw;
+    z-index: -1;
+    background: rgb(231, 231, 231);
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+}
+/* ნავიგატორის სტილი */
+
+header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+nav{
+    width: 90%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.nav-links ul{
+    display: flex;
+    gap: 30px;
+}
+.nav-links a{
+    color: rgb(0, 0, 0);
+    font-size: 19px;
+    transition: 0.6s;
+    
+}
+.nav-links a:hover{
+   color: gray;
+   transition: 0.5s;
+}
+  
+
+.logo{
+    color: #3B82F6;
+    font-size: 25px;
+    font-weight: bolder;
+    
+}
+.button-div button{
+    background-color: #3B82F6;
+    color: rgb(0, 0, 0);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: bolder;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 150px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+.button-div button:hover{
+    background-color: #146bf7;
+    
+    transform: translateY(-2px);
+}
+.button-div button:active{
+    transform: scale(0.97);
+    box-shadow: 0 0 6px var(--primary-dark);
+}
+.button-div i{
+    color: var(--gray);
+    padding-left: 3px;
+}
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 20;
+  }
+  
+  .burger span {
+    height: 3px;
+    width: 25px;
+    background: #3B82F6;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  @media (max-width: 1000px) {
+    .burger {
+      display: flex;
+    }
+  
+    .nav-links {
+      position: absolute;
+      top: 1px;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      background: #146bf7;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      
+    }
+  
+    .nav-links.active {
+      max-height: 300px;
+    }
+  
+    .nav-links ul {
+      flex-direction: column;
+      align-items: center;
+      padding: 5rem 0;
+      gap: 20px;
+    }
+  
+    .button-div {
+      display: none;
+    }
+  }
+  
+  /* Burger Animation */
+  .burger.toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .burger.toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
